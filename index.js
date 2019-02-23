@@ -18,14 +18,18 @@ app.get('/', function(req, res){
 app.post('/webhook', (req, res) => {
 	const data = req.body;
   console.log(data);
+  var intent = data.intent.displayName;
   var queryText = data.queryResult.queryText;
+  var parameters = data.parameters;
+
 
 	// Code the task you want to achieve with @data
 	// Read the v2 api documentation of dialogflow : https://dialogflow.com/docs/fulfillment
 	// Using the v2 will become mandatory, Google wrote a guide to migrate from v1 to v2 as v2 is officially released
 
 	const response = {
-		fulfillmentText: "메롱 " + data
+		fulfillmentText: "너의 intent는 " + intent,
+    text : "이것도 되냐?"
 	}
 	res.json(response);
   console.log("연결되었습니다!");
