@@ -26,7 +26,7 @@ app.post('/', (req, res) => {
 	// Using the v2 will become mandatory, Google wrote a guide to migrate from v1 to v2 as v2 is officially released
 
 	const response = {
-		//fulfillmentText: "너의 intent는 " + intent
+		fulfillmentText: "너의 intent는 " + intent,
     "messages": [
   {
     "platform": "facebook",
