@@ -1,0 +1,19 @@
+{
+  "name": "mychat",
+  "version": "1.0.0",
+  "description": "lets go",
+  "main": "index.js",
+  "scripts": {
+    "start":"node index.js",
+    "test": "hi"
+  },
+  "keywords": [
+    "hi"
+  ],
+  "author": "2dd",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
