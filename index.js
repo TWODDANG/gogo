@@ -4,7 +4,7 @@ const bodyparser = require('body-parser');
 
 var http = require("http");
 setInterval(function() {
-    http.post("http://radiant-everglades-63897.herokuapp.com/webhook");
+    http.get("http://radiant-everglades-63897.herokuapp.com/");
 }, 300000); // every 5 minutes (300000)
 
 // Configuration
