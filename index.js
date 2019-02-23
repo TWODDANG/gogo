@@ -31,7 +31,6 @@ app.post('/webhook', (req, res) => {
 		fulfillmentText: "너의 intent는 " + intent,
 	}
 	res.json(response);
-  res.json(response);
   console.log("연결되었습니다!");
 });
 console.log("실행포트번호눈" + process.env.PORT);
