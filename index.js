@@ -2,6 +2,11 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 
+const { WebhookClient } = require('dialogflow-fulfillment');
+
+ //Create an instance
+const agent = new WebhookClient({request: request, response: response});
+
 var http = require("http");
 setInterval(function() {
     http.get("http://radiant-everglades-63897.herokuapp.com/");
@@ -19,6 +24,7 @@ app.post('/', (req, res) => {
   var intent = data.queryResult.intent.displayName;
   var queryText = data.queryResult.queryText;
   var parameters = data.queryResult.parameters;
+  agent.add(`how are you doing`);
 
 
 	// Code the task you want to achieve with @data
