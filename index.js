@@ -19,7 +19,7 @@ app.post('/webhook', (req, res) => {
 	// Using the v2 will become mandatory, Google wrote a guide to migrate from v1 to v2 as v2 is officially released
 
 	const response = {
-		fulfillmentText: "Your webhook works fine !",
+		fulfillmentText: "앙기모띠",
 	}
 	res.json(response);
   console.log("연결되었습니다!");
