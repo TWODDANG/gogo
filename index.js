@@ -10,7 +10,9 @@ setInterval(function() {
 // Configuration
 const app = express();
 app.use(bodyparser.json());
-
+app.get('/', function(req, res){
+    res.send('Hello home page');;
+});
 
 // Webhook route
 app.post('/webhook', (req, res) => {
