@@ -10,17 +10,15 @@ setInterval(function() {
 // Configuration
 const app = express();
 app.use(bodyparser.json());
-app.get('/', function(req, res){
-    res.send('Hello home page');;
-});
+app.get('/', (req, res) => res.send('Hello World!'));
 
 // Webhook route
-app.post('/webhook', (req, res) => {
+app.post('/', (req, res) => {
 	const data = req.body;
   console.log(data);
-  var intent = data.intent.displayName;
+  var intent = data.queryResult.intent.displayName;
   var queryText = data.queryResult.queryText;
-  var parameters = data.parameters;
+  var parameters = data.queryResult.parameters;
 
 
 	// Code the task you want to achieve with @data
@@ -28,9 +26,10 @@ app.post('/webhook', (req, res) => {
 	// Using the v2 will become mandatory, Google wrote a guide to migrate from v1 to v2 as v2 is officially released
 
 	const response = {
-		fulfillmentText: "너의 intent는 " + intent,
+		fulfillmentText: "너의 intent는 " + intent
 	}
 	res.json(response);
+  res.json(response);
   console.log("연결되었습니다!");
 });
 console.log("실행포트번호눈" + process.env.PORT);
