@@ -74,59 +74,69 @@ app.post('/', (req, res) => {
 });
 */
 
-app.post('/', function (req, res) {
+//runkit
 
+// POST method route
+app.post('/', function (req, res) {
+    console.log(req);
     let action = req.body.queryResult.action;
-    const data = req.body;
-    console.log(data);
-    var intent = data.queryResult.intent.displayName;
-    var queryText = data.queryResult.queryText;
-    var parameters = data.queryResult.parameters;
     console.log(action);
     let responseJson = {};
     responseJson.fulfillmentText = 'This is an endpoint published to RunKit'; // displayed response
-
-
-    console.log('Inside facebook.card if condition');
-    if(action == "facebook.card"){
-      let richResponses = [
+    if(action === 'telegram.quickreply'){
+        let richResponses = [
                 {
-                  "card": {
-                    "title": "Card Title",
-                    "subtitle": "Card subtitle",
-                    "imageUri": "https://github.com/fluidicon.png",
-                    "buttons": [
-                      {
-                        "text": "Go to Google",
-                        "postback": "www.google.com"
-                      },
-                      {
-                        "text": "Go to Dialogflow",
-                        "postback": "www.dialogflow.com"
-                      },
-                      {
-                        "text": "Go to Slack",
-                        "postback": "www.slack.com"
-                      }
-                    ]
-                  },
-                  "platform": "FACEBOOK"
-                },
-                {
-                  "text": {
-                    "text": [
-                      ""
-                    ]
-                  }
+                    "quickReplies": {
+                        "title": "This is a reply from RunKit. Choose an option",
+                        "quickReplies": [
+                            "YES",
+                            "NO"
+                        ]
+                    },
+                    "platform": "TELEGRAM"
                 }
-          ]
+            ]
+        responseJson.fulfillmentMessages = richResponses;
     }
-
+    else if (action === 'facebook.card'){
+        console.log('Inside facebook.card if condition');
+        let richResponses = [
+              {
+                "card": {
+                  "title": "Card Title",
+                  "subtitle": "Card subtitle",
+                  "imageUri": "https://github.com/fluidicon.png",
+                  "buttons": [
+                    {
+                      "text": "Go to Google",
+                      "postback": "www.google.com"
+                    },
+                    {
+                      "text": "Go to Dialogflow",
+                      "postback": "www.dialogflow.com"
+                    },
+                    {
+                      "text": "Go to Slack",
+                      "postback": "www.slack.com"
+                    }
+                  ]
+                },
+                "platform": "FACEBOOK"
+              },
+              {
+                "text": {
+                  "text": [
+                    ""
+                  ]
+                }
+              }
+        ]
         responseJson.fulfillmentMessages = richResponses;
         console.log(responseJson);
-
+    }
     res.json(responseJson);
 })
+
 console.log("실행포트번호눈" + process.env.PORT);
 app.listen(process.env.PORT || 3000);
 
