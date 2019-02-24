@@ -81,7 +81,7 @@ app.post('/', function (req, res) {
     console.log(req);
     let action = req.body.queryResult.action;
     console.log(action);
-    let responseJson = {};
+
     responseJson.fulfillmentText = 'This is an endpoint published to RunKit'; // displayed response
     if(action === 'telegram.quickreply'){
         let richResponses = [
