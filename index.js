@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 
-const { WebhookClient } = require('dialogflow-fulfillment');
+const { WebhookClient } = require('dialogflow-webhook');
 
  //Create an instance
 const agent = new WebhookClient({request: request, response: response});
@@ -25,6 +25,7 @@ app.post('/', (req, res) => {
   var queryText = data.queryResult.queryText;
   var parameters = data.queryResult.parameters;
   agent.add(`how are you doing`);
+  agent.add("hi");
 
 
 	// Code the task you want to achieve with @data
@@ -32,7 +33,7 @@ app.post('/', (req, res) => {
 	// Using the v2 will become mandatory, Google wrote a guide to migrate from v1 to v2 as v2 is officially released
 
 	const response = {
-		fulfillmentText: "너의 intent는 " + intent
+	fulfillmentText: "너의 intent는 " + intent
 
 	}
 	res.json(response);
