@@ -10,6 +10,7 @@ const bodyparser = require('body-parser');
 var http = require("http");
 setInterval(function() {
     http.get("http://radiant-everglades-63897.herokuapp.com/");
+    console.log("헤로쿠 자지마라!");
 }, 300000); // every 5 minutes (300000)
 
 // Configuration
@@ -64,8 +65,8 @@ app.post('/', (req, res) => {
       }
     ]
     responseJson.fulfillmentMessages = quickReply;
-    res.json(responseJson);
-	//res.json(response);
+  //  res.json(responseJson);
+	res.json(response);
 
 
   console.log("연결되었습니다!");
