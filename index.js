@@ -1,3 +1,4 @@
+/*
 // Dependencies
 const express = require('express');
 const bodyparser = require('body-parser');
@@ -19,7 +20,7 @@ app.use(bodyparser.json());
 app.get('/', (req, res) => res.send('Hello World!'));
 
 // Webhook route
-/*
+
 app.post('/', (req, res) => {
 	const data = req.body;
   console.log(data);
@@ -77,11 +78,27 @@ app.post('/', (req, res) => {
 //runkit
 
 // POST method route
+
+/*
+console.log("실행포트번호눈" + process.env.PORT);
+app.listen(process.env.PORT || 3000);
+*/
+
+// Logic for running your server with HTTPS here
+const express = require('express');
+const app = express()
+app.use(express.json());
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(process.env.PORT, () => console.log('Example app listening on port 3000!'))
+
+// POST method route
 app.post('/', function (req, res) {
     console.log(req);
     let action = req.body.queryResult.action;
     console.log(action);
-
+    let responseJson = {};
     responseJson.fulfillmentText = 'This is an endpoint published to RunKit'; // displayed response
     if(action === 'telegram.quickreply'){
         let richResponses = [
@@ -136,9 +153,3 @@ app.post('/', function (req, res) {
     }
     res.json(responseJson);
 })
-
-console.log("실행포트번호눈" + process.env.PORT);
-app.listen(process.env.PORT || 3000);
-
-
-// Logic for running your server with HTTPS here
