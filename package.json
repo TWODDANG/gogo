@@ -13,6 +13,7 @@
   "author": "2dd",
   "license": "ISC",
   "dependencies": {
+    "actions-on-google": "^2.6.0",
     "body-parser": "^1.18.3",
     "dialogflow-fulfillment": "^0.6.1",
     "express": "^4.16.4"
