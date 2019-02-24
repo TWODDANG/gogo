@@ -62,7 +62,7 @@ app.post('/', (req, res) => {
       }
     ]
 
-	res.json(quickReply + response);
+	res.json(quickReply);
 
 
   console.log("연결되었습니다!");
