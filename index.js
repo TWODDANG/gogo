@@ -61,8 +61,8 @@ app.post('/', (req, res) => {
         "payload": {}
       }
     ]
-
-	res.json(quickReply);
+    res.fulfillmentMessages = quickReply;
+	//res.json(response);
 
 
   console.log("연결되었습니다!");
