@@ -25,6 +25,8 @@ app.post('/', (req, res) => {
   var queryText = data.queryResult.queryText;
   var parameters = data.queryResult.parameters;
 
+  let responseJson = {};
+
 
 	// Code the task you want to achieve with @data
 	// Read the v2 api documentation of dialogflow : https://dialogflow.com/docs/fulfillment
@@ -61,7 +63,8 @@ app.post('/', (req, res) => {
         "payload": {}
       }
     ]
-    res.fulfillmentMessages = quickReply;
+    responseJson.fulfillmentMessages = quickReply;
+    res.json(responseJson);
 	//res.json(response);
 
 
