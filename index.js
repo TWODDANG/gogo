@@ -66,7 +66,7 @@ app.post('/', (req, res) => {
     ]
 
   */
-  fulfillmentMessages: [
+  "fulfillmentMessages": [
     {
       "quickReplies": {
         "title": "ㅇ",
