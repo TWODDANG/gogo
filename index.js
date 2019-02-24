@@ -88,7 +88,7 @@ app.post('/', function (req, res) {
 
 
     console.log('Inside facebook.card if condition');
-    if(action === 'facebook.card'){
+    if(action == "facebook.card"){
       let richResponses = [
                 {
                   "card": {
