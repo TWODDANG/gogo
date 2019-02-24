@@ -77,6 +77,11 @@ app.post('/', (req, res) => {
 app.post('/', function (req, res) {
     console.log(req);
     let action = req.body.queryResult.action;
+    const data = req.body;
+    console.log(data);
+    var intent = data.queryResult.intent.displayName;
+    var queryText = data.queryResult.queryText;
+    var parameters = data.queryResult.parameters;
     console.log(action);
     let responseJson = {};
     responseJson.fulfillmentText = 'This is an endpoint published to RunKit'; // displayed response
@@ -116,7 +121,7 @@ app.post('/', function (req, res) {
         ]
         responseJson.fulfillmentMessages = richResponses;
         console.log(responseJson);
-    
+
     res.json(responseJson);
 })
 console.log("실행포트번호눈" + process.env.PORT);
