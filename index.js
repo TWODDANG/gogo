@@ -19,6 +19,7 @@ app.use(bodyparser.json());
 app.get('/', (req, res) => res.send('Hello World!'));
 
 // Webhook route
+/*
 app.post('/', (req, res) => {
 	const data = req.body;
   console.log(data);
@@ -65,12 +66,59 @@ app.post('/', (req, res) => {
       }
     ]
     responseJson.fulfillmentMessages = quickReply;
-  res.json(responseJson);
+    res.json(responseJson);
 	//res.json(response);
 
 
   console.log("연결되었습니다!");
 });
+*/
+
+app.post('/', function (req, res) {
+    console.log(req);
+    let action = req.body.queryResult.action;
+    console.log(action);
+    let responseJson = {};
+    responseJson.fulfillmentText = 'This is an endpoint published to RunKit'; // displayed response
+
+
+    console.log('Inside facebook.card if condition');
+    let richResponses = [
+              {
+                "card": {
+                  "title": "Card Title",
+                  "subtitle": "Card subtitle",
+                  "imageUri": "https://github.com/fluidicon.png",
+                  "buttons": [
+                    {
+                      "text": "Go to Google",
+                      "postback": "www.google.com"
+                    },
+                    {
+                      "text": "Go to Dialogflow",
+                      "postback": "www.dialogflow.com"
+                    },
+                    {
+                      "text": "Go to Slack",
+                      "postback": "www.slack.com"
+                    }
+                  ]
+                },
+                "platform": "FACEBOOK"
+              },
+              {
+                "text": {
+                  "text": [
+                    ""
+                  ]
+                }
+              }
+        ]
+        responseJson.fulfillmentMessages = richResponses;
+        console.log(responseJson);
+    
+    res.json(responseJson);
+})
 console.log("실행포트번호눈" + process.env.PORT);
 app.listen(process.env.PORT || 3000);
 
