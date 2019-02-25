@@ -60,6 +60,7 @@ app.post('/', (req, res) => {
       "text": "Hello, Facebook!",
       "quick_replies": [ { "content_type":"text", "title":"Search", "payload":"test", "image_url":"example.com/img/red.png" }]
     }
+  }
 /*
   {
     "card": {
