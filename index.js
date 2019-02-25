@@ -38,7 +38,7 @@ app.post('/', (req, res) => {
 	const response = {
 
 "fulfillmentText": "This is a text response",
-
+"fulfillmentMessages": {},
 "source": "google.com",
 "payload": {
   "facebook": {
@@ -50,6 +50,7 @@ app.post('/', (req, res) => {
   }
 }
 };
+
 response.fulfillmentMessages.payload =
  {
   "facebook": {
@@ -60,6 +61,7 @@ response.fulfillmentMessages.payload =
 
   //  responseJson.fulfillmentMessages = quickReply;
     //res.json(responseJson);
+
 	res.json(response);
   console.log("post 받았습니다!");
 });
