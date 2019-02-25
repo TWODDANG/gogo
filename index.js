@@ -50,14 +50,8 @@ app.post('/', (req, res) => {
   ]
 },
 "platform": "FACEBOOK"
-},
-{
-  "text": {
-    "text": [
-      ""
-    ]
-  }
 }
+
 
 
   /*
