@@ -59,6 +59,7 @@ app.post('/', (req, res) => {
 */
 "source": "google.com",
 "payload": {
+  /*
   "google": {
     "expectUserResponse": true,
     "richResponse": {
@@ -71,6 +72,7 @@ app.post('/', (req, res) => {
       ]
     }
   },
+  */
   "facebook": {
     "text": "Hello, Facebook!"
   },
