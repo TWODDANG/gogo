@@ -36,25 +36,13 @@ app.post('/', (req, res) => {
 	// Using the v2 will become mandatory, Google wrote a guide to migrate from v1 to v2 as v2 is officially released
 
 	const response = {
-
+/*
 "fulfillmentText": "This is a text response",
 
 
 "fulfillmentMessages": [
-{
-  "quickReplies": {
-  "title": "안녕",
-  "quickReplies": [
-    "1",
-    "2"
-  ]
-},
-"platform": "FACEBOOK"
-}
 
 
-
-  /*
   {
     "card": {
       "title": "card title",
@@ -68,9 +56,9 @@ app.post('/', (req, res) => {
       ]
     }
   }
-  */
-],
 
+],
+*/
 "source": "google.com",
 "payload": {
   /*
@@ -88,8 +76,14 @@ app.post('/', (req, res) => {
   },
   */
   "facebook": {
-    "text": "Hello, Facebook!"
+    "text": "Hello, Facebook!",
+    "quick_replies": [ { "content_type":"text", "title":"Search", "payload":"test", "image_url":"example.com/img/red.png" }]
   },
+
+  /*
+{ "facebook": { "text": "Here is a quick reply!", "quick_replies":[ { "content_type":"text", "title":"Search", "payload":"test", "image_url":"example.com/img/red.png" } ] } }
+
+  */
   "slack": {
     "text": "This is a text response for Slack."
   }
@@ -117,9 +111,7 @@ app.post('/', (req, res) => {
   //  responseJson.fulfillmentMessages = quickReply;
     //res.json(responseJson);
 	res.json(response);
-
-
-  console.log("연결되었습니다!");
+  console.log("post 받았습니다!");
 });
 
 
