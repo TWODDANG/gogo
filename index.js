@@ -37,6 +37,14 @@ app.post('/', (req, res) => {
 
 	const response = {
 "fulfillmentText": "This is a text response",
+"messages": [
+  {
+    "platform": "facebook",
+    "speech": "Text response",
+    "type": 0
+  }
+]
+/*
 "fulfillmentMessages": [
   {
     "card": {
