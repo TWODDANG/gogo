@@ -37,27 +37,28 @@ app.post('/', (req, res) => {
 
 	const response = {
 
-"fulfillmentText": "This is a text response",
-"fulfillmentMessages": {},
-"source": "google.com",
-"payload": {
-  "facebook": {
-    "text": "Hello, Facebook!",
-    "quick_replies": [ { "content_type":"text", "title":"Search", "payload":"test", "image_url":"example.com/img/red.png" }]
-  },
-  "slack": {
-    "text": "This is a text response for Slack."
+"fulfillmentText": "This is a text response"
+/*
+"fulfillmentMessages": [
+  {
+    "card": {
+      "title": "card title",
+      "subtitle": "card text",
+      "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
+      "buttons": [
+        {
+          "text": "button text",
+          "postback": "https://assistant.google.com/"
+        }
+      ]
+    }
   }
-}
+],
+*/
+
 };
 
-response.fulfillmentMessages.payload =
- {
-  "facebook": {
-    "text": "Hello, Facebook!",
-    "quick_replies": [ { "content_type":"text", "title":"Search", "payload":"test", "image_url":"example.com/img/red.png" }]
-  }
-}
+
 
   //  responseJson.fulfillmentMessages = quickReply;
     //res.json(responseJson);
