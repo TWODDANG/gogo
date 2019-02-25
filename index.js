@@ -37,35 +37,8 @@ app.post('/', (req, res) => {
 
 	const response = {
 	//fulfillmentText: "너의 intent는 " + intent,
-  /*fulfillmentMessages: [
-      {
-        "payload": {},
-        "platform": "FACEBOOK"
-      },
-      {
-        "quickReplies": {
-          "title": "골라봐",
-          "quickReplies": [
-            "가위",
-            "바위",
-            "보"
-          ]
-        },
-        "platform": "FACEBOOK"
-      },
-      {
-        "text": {
-          "text": [
-            ""
-          ]
-        }
-      },
-      {
-        "payload": {}
-      }
-    ]
 
-  */
+
   "fulfillmentMessages": [
     {
       "quickReplies": {
@@ -83,7 +56,6 @@ app.post('/', (req, res) => {
         ]
       }
     }
-  }
 
 ]
 }
