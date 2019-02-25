@@ -51,7 +51,9 @@ app.post('/', (req, res) => {
       ]
     }
   }
-],
+]
+/*
+,
 "source": "google.com",
 "payload": {
   "google": {
