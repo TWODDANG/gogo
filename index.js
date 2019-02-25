@@ -41,59 +41,17 @@ app.post('/', (req, res) => {
 
 
 "fulfillmentMessages": [
-"payload": {
-    /*
-    "google": {
-      "expectUserResponse": true,
-      "richResponse": {
-        "items": [
-          {
-            "simpleResponse": {
-              "textToSpeech": "this is a simple response"
-            }
-          }
-        ]
-      }
-    },
-    */
+  "payload": {
     "facebook": {
       "text": "Hello, Facebook!",
       "quick_replies": [ { "content_type":"text", "title":"Search", "payload":"test", "image_url":"example.com/img/red.png" }]
     }
   }
-/*
-  {
-    "card": {
-      "title": "card title",
-      "subtitle": "card text",
-      "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
-      "buttons": [
-        {
-          "text": "button text",
-          "postback": "https://assistant.google.com/"
-        }
-      ]
-    }
-  }
-*/
+
 ],
 
 "source": "google.com",
 "payload": {
-  /*
-  "google": {
-    "expectUserResponse": true,
-    "richResponse": {
-      "items": [
-        {
-          "simpleResponse": {
-            "textToSpeech": "this is a simple response"
-          }
-        }
-      ]
-    }
-  },
-  */
   "facebook": {
     "text": "Hello, Facebook!",
     "quick_replies": [ { "content_type":"text", "title":"Search", "payload":"test", "image_url":"example.com/img/red.png" }]
@@ -107,25 +65,7 @@ app.post('/', (req, res) => {
     "text": "This is a text response for Slack."
   }
 }
-/*
-"outputContexts": [
-  {
-    "name": "projects/${PROJECT_ID}/agent/sessions/${SESSION_ID}/contexts/context name",
-    "lifespanCount": 5,
-    "parameters": {
-      "param": "param value"
-    }
-  }
-],
 
-"followupEventInput": {
-  "name": "event name",
-  "languageCode": "en-US",
-  "parameters": {
-    "param": "param value"
-      }
-    }
-*/
 };
   //  responseJson.fulfillmentMessages = quickReply;
     //res.json(responseJson);
@@ -140,3 +80,64 @@ app.post('/', (req, res) => {
 
 console.log("실행포트번호눈" + process.env.PORT);
 app.listen(process.env.PORT || 3000);
+
+/*
+fulfillment 예시
+
+{
+  "fulfillmentText": "This is a text response",
+  "fulfillmentMessages": [
+    {
+      "card": {
+        "title": "card title",
+        "subtitle": "card text",
+        "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
+        "buttons": [
+          {
+            "text": "button text",
+            "postback": "https://assistant.google.com/"
+          }
+        ]
+      }
+    }
+  ],
+  "source": "example.com",
+  "payload": {
+    "google": {
+      "expectUserResponse": true,
+      "richResponse": {
+        "items": [
+          {
+            "simpleResponse": {
+              "textToSpeech": "this is a simple response"
+            }
+          }
+        ]
+      }
+    },
+    "facebook": {
+      "text": "Hello, Facebook!"
+    },
+    "slack": {
+      "text": "This is a text response for Slack."
+    }
+  },
+  "outputContexts": [
+    {
+      "name": "projects/${PROJECT_ID}/agent/sessions/${SESSION_ID}/contexts/context name",
+      "lifespanCount": 5,
+      "parameters": {
+        "param": "param value"
+      }
+    }
+  ],
+  "followupEventInput": {
+    "name": "event name",
+    "languageCode": "en-US",
+    "parameters": {
+      "param": "param value"
+    }
+  }
+}
+
+*/
