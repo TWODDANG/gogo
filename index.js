@@ -52,7 +52,7 @@ app.post('/', (req, res) => {
     }
   }
 ],
-"source": "example.com",
+"source": "google.com",
 "payload": {
   "google": {
     "expectUserResponse": true,
@@ -72,7 +72,8 @@ app.post('/', (req, res) => {
   "slack": {
     "text": "This is a text response for Slack."
   }
-},
+}
+/*
 "outputContexts": [
   {
     "name": "projects/${PROJECT_ID}/agent/sessions/${SESSION_ID}/contexts/context name",
@@ -82,6 +83,7 @@ app.post('/', (req, res) => {
     }
   }
 ],
+
 "followupEventInput": {
   "name": "event name",
   "languageCode": "en-US",
@@ -89,8 +91,8 @@ app.post('/', (req, res) => {
     "param": "param value"
       }
     }
-
-}
+*/
+};
   //  responseJson.fulfillmentMessages = quickReply;
     //res.json(responseJson);
 	res.json(response);
