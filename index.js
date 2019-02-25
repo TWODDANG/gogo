@@ -41,7 +41,7 @@ app.post('/', (req, res) => {
 
 
 "fulfillmentMessages": [
-  "payload": {
+"payload": {
     /*
     "google": {
       "expectUserResponse": true,
@@ -77,7 +77,7 @@ app.post('/', (req, res) => {
   }
 */
 ],
-*/
+
 "source": "google.com",
 "payload": {
   /*
