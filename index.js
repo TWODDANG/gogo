@@ -58,38 +58,10 @@ app.post('/', (req, res) => {
     }
 
 ]
-}
-/*
-let quickReply = [
-    {
-      "payload": {},
-      "platform": "FACEBOOK"
-    },
-    {
-      "quickReplies": {
-        "title": "골라봐",
-        "quickReplies": [
-          "가위",
-          "바위",
-          "보"
-        ]
-      },
-      "platform": "FACEBOOK"
-    },
-    {
-      "text": {
-        "text": [
-          ""
-        ]
-      }
-    },
-    {
-      "payload": {}
-    }
-  ]
-*/
+};
 
-    responseJson.fulfillmentMessages = quickReply;
+
+  //  responseJson.fulfillmentMessages = quickReply;
     //res.json(responseJson);
 	res.json(response);
 
@@ -98,7 +70,6 @@ let quickReply = [
 });
 
 
-//runkit
 
 // POST method route
 
