@@ -36,13 +36,31 @@ app.post('/', (req, res) => {
 	// Using the v2 will become mandatory, Google wrote a guide to migrate from v1 to v2 as v2 is officially released
 
 	const response = {
-/*
+
 "fulfillmentText": "This is a text response",
 
 
 "fulfillmentMessages": [
-
-
+  "payload": {
+    /*
+    "google": {
+      "expectUserResponse": true,
+      "richResponse": {
+        "items": [
+          {
+            "simpleResponse": {
+              "textToSpeech": "this is a simple response"
+            }
+          }
+        ]
+      }
+    },
+    */
+    "facebook": {
+      "text": "Hello, Facebook!",
+      "quick_replies": [ { "content_type":"text", "title":"Search", "payload":"test", "image_url":"example.com/img/red.png" }]
+    }
+/*
   {
     "card": {
       "title": "card title",
@@ -56,7 +74,7 @@ app.post('/', (req, res) => {
       ]
     }
   }
-
+*/
 ],
 */
 "source": "google.com",
